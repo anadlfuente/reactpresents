@@ -1,13 +1,21 @@
+import RegisterComponent from './Components/RegisterComponent';
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 
 let App= ()=> {
   return (
-    <div className="App">
+    <div className="main-container">
       <h1>Hola</h1>
+      <nav >
+        <ul className='navbar'>
+          <li><Link to="/register">Register</Link></li>
+          <li><Link to="/login">Login</Link></li>
+          <li><Link to="/">Index</Link></li>
+        </ul>
+      </nav>
       <Routes>
         <Route path= "/register" element={
-            <p>Register</p>
+            <RegisterComponent/>
         }></Route>
         <Route path= "/login" element={
             <p>Login</p>
