@@ -28,6 +28,13 @@ let LoginComponent = () => {
 
         if (response.ok){
             let jsonData = await response.json();
+            if(jsonData.ApiKey != null){
+                localStorage.setItem("ApiKey",jsonData.ApiKey)
+                localStorage.setItem("userId",jsonData.id)
+                localStorage.setItem("userName",jsonData.name)
+                localStorage.setItem("userEmail",jsonData.email) 
+            }
+            
             setmessage("User Logged")
         }else{
             setmessage("User Not Found")
@@ -37,7 +44,7 @@ let LoginComponent = () => {
     return (
         <div>
             <h2>Login user</h2>
-            { message != "" && <h3 className="errorMessage"> {message} </h3> }
+            { message !== "" && <h3 className="errorMessage"> {message} </h3> }
             <div className="center-box">
                 <div className="from-group">
                     <input type="text" placeholder="your email" onChange={changeEmail} />

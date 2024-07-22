@@ -22,7 +22,7 @@ let App= ()=> {
             <LoginComponent />
         }></Route>
         <Route path= "/" element={
-            <p>Índice</p>
+            <p>Bienvenido,{localStorage.getItem("userName")}</p>
         }></Route>
       </Routes>
     </div>
