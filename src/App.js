@@ -2,6 +2,7 @@ import RegisterComponent from './Components/RegisterComponent';
 import LoginComponent from './Components/LoginComponent';
 import './App.css';
 import { Link, Route, Routes } from 'react-router-dom';
+import ItemsComponent from './Components/ItemsComponent';
 
 let App= ()=> {
   return (
@@ -23,6 +24,9 @@ let App= ()=> {
         }></Route>
         <Route path= "/" element={
             <p>Bienvenido,{localStorage.getItem("userName")}</p>
+        }></Route>
+        <Route path= "/items" element={
+            <ItemsComponent/>
         }></Route>
       </Routes>
     </div>
