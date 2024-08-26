@@ -2,7 +2,7 @@ import RegisterComponent from './Components/RegisterComponent';
 import LoginComponent from './Components/LoginComponent';
 import './App.css';
 import { Link, Route, Routes } from 'react-router-dom';
-import ItemsComponent from './Components/ItemsComponent';
+import PresentsComponent from './Components/PresentsComponent';
 
 let App= ()=> {
   return (
@@ -13,6 +13,7 @@ let App= ()=> {
           <li><Link to="/">Index</Link></li>
           <li><Link to="/login">Login</Link></li>
           <li><Link to="/register">Register</Link></li>
+          <li><Link to="/presents">My Presents</Link></li>
         </ul>
       </nav>
       <Routes>
@@ -25,8 +26,8 @@ let App= ()=> {
         <Route path= "/" element={
             <p>Bienvenido,{localStorage.getItem("userName")}</p>
         }></Route>
-        <Route path= "/items" element={
-            <ItemsComponent/>
+        <Route path= "/presents" element={
+            <PresentsComponent/>
         }></Route>
       </Routes>
     </div>
