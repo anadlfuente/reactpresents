@@ -4,6 +4,7 @@ import './App.css';
 import { Link, Route, Routes } from 'react-router-dom';
 import PresentsComponent from './Components/PresentsComponent';
 import CreatePresentComponent from './Components/CreatePresentComponent';
+import FriendPresentsComponent from './Components/FriendsPresentsComponent';
 
 let App= ()=> {
   return (
@@ -15,6 +16,7 @@ let App= ()=> {
           <li><Link to="/login">Login</Link></li>
           <li><Link to="/register">Register</Link></li>
           <li><Link to="/presents">My Presents</Link></li>
+          <li><Link to="/friendpresents">Friend's Presents</Link></li>
           <li><Link to="/createPresent">Create New Present</Link></li>
         </ul>
       </nav>
@@ -33,6 +35,9 @@ let App= ()=> {
         }></Route>
         <Route path= "/createPresent" element={
             <CreatePresentComponent/>
+        }></Route>
+        <Route path= "/friendpresents" element={
+            <FriendPresentsComponent/>
         }></Route>
       </Routes>
     </div>
