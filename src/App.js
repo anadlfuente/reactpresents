@@ -3,6 +3,7 @@ import LoginComponent from './Components/LoginComponent';
 import './App.css';
 import { Link, Route, Routes } from 'react-router-dom';
 import PresentsComponent from './Components/PresentsComponent';
+import CreatePresentComponent from './Components/CreatePresentComponent';
 
 let App= ()=> {
   return (
@@ -14,6 +15,7 @@ let App= ()=> {
           <li><Link to="/login">Login</Link></li>
           <li><Link to="/register">Register</Link></li>
           <li><Link to="/presents">My Presents</Link></li>
+          <li><Link to="/createPresent">Create New Present</Link></li>
         </ul>
       </nav>
       <Routes>
@@ -28,6 +30,9 @@ let App= ()=> {
         }></Route>
         <Route path= "/presents" element={
             <PresentsComponent/>
+        }></Route>
+        <Route path= "/createPresent" element={
+            <CreatePresentComponent/>
         }></Route>
       </Routes>
     </div>
