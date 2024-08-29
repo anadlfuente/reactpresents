@@ -53,6 +53,11 @@ h1, h2, h3 {
   border: 1px solid #ccc;
 }
 
+.search-box{
+  margin-top:15px;
+  align-items: center;
+}
+
 .form-group {
   margin-bottom: 15px;
   display:flex;

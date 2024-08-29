@@ -32,7 +32,7 @@ let FriendPresentsComponent = ()=> {
 
     return(
         <div>
-            <div>
+            <div className="search-box">
                 <div className="from-group">
                     <input type="text" placeholder="Friend Email" onChange={changeFriend} />
                 </div>

@@ -5,6 +5,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import PresentsComponent from './Components/PresentsComponent';
 import CreatePresentComponent from './Components/CreatePresentComponent';
 import FriendPresentsComponent from './Components/FriendsPresentsComponent';
+import DetailsPresentComponent from './Components/DetailsPresentComponent';
 
 let App= ()=> {
   return (
@@ -38,6 +39,9 @@ let App= ()=> {
         }></Route>
         <Route path= "/friendpresents" element={
             <FriendPresentsComponent/>
+        }></Route>
+        <Route path= "/present/:presentId" element={
+            <DetailsPresentComponent/>
         }></Route>
       </Routes>
     </div>
