@@ -18,7 +18,7 @@ let DetailsPresentComponent = ()=> {
             let jsonData= await response.json()
             setPresent(jsonData)
         }else{
-            setMessage("Error")
+            setMessage("Error loading present details")
         }
     }
     return(

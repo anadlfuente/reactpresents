@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { backendURL } from "../Globals"
+import { Link } from "react-router-dom"
 
 let PresentsComponent = ()=> {
     
@@ -26,13 +27,15 @@ let PresentsComponent = ()=> {
             <div class= "present-list">
                 {presents.map (pres => 
                     (
-                        <div className="present">
-                            <h3>{pres.present}</h3>
-                            <p>{pres.description}</p>
-                            <p>{pres.url}</p>
-                            <p>{pres.price}</p>
-                            <p>{pres.ChosenBy}</p>
-                        </div>
+                        <Link to= { "/present/"+ pres.idPres}>
+                            <div className="present">
+                                <h3>{pres.present}</h3>
+                                <p>{pres.description}</p>
+                                <p>{pres.url}</p>
+                                <p>{pres.price}</p>
+                                <p>{pres.ChosenBy}</p>
+                            </div>
+                        </Link>
                     )
                 )}
             </div>
