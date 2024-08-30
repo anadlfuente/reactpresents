@@ -26,7 +26,9 @@ let PresentsComponent = ()=> {
             method:"DELETE"
         })
         if (response.ok){
-            getPresents();
+            //getPresents();
+            let newpres= presents.filter(pres => pres.idPres != id)
+            setPresents(newpres)
         }else{
             let jsonData= await response.json()
             setMessage(jsonData.error)
