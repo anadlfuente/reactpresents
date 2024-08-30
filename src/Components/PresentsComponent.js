@@ -20,6 +20,18 @@ let PresentsComponent = ()=> {
             setMessage("Error")
         }
     }
+
+    let deletePresent = async (id) =>{
+        let response= await fetch (backendURL+"/presents/"+id+"?apiKey="+localStorage.getItem("ApiKey"),{
+            method:"DELETE"
+        })
+        if (response.ok){
+            getPresents();
+        }else{
+            let jsonData= await response.json()
+            setMessage(jsonData.error)
+        }
+    }
     return(
         <div>
             <h2>Presents</h2>
@@ -27,15 +39,16 @@ let PresentsComponent = ()=> {
             <div class= "present-list">
                 {presents.map (pres => 
                     (
-                        <Link to= { "/present/"+ pres.idPres}>
-                            <div className="present">
+                        <div>
+                            <Link to= { "/present/"+ pres.idPres}>
                                 <h3>{pres.present}</h3>
-                                <p>{pres.description}</p>
-                                <p>{pres.url}</p>
-                                <p>{pres.price}</p>
-                                <p>{pres.ChosenBy}</p>
-                            </div>
-                        </Link>
+                            </Link>
+                            <p>{pres.description}</p>
+                            <p>{pres.url}</p>
+                            <p>{pres.price}</p>
+                            <p>{pres.ChosenBy}</p>
+                            <button onClick={() => {deletePresent(pres.idPres)}}>Delete</button>
+                        </div>
                     )
                 )}
             </div>
